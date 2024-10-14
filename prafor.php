@@ -131,14 +131,14 @@ echo "</table>";
     margin:20px;
 }
 .nine td{
-    border:1px solid #af3;
+    border:1px solid #251f86;
     width:30px;
     height:30px;
     text-align: center;
 }
 .nine tr:nth-child(1),
 .nine td:nth-child(1){
-    background:blue;
+    background:#9b96e7;
     color:white;
 }
 
@@ -156,9 +156,7 @@ for($j=0;$j<=9;$j++){
             echo $i;
         }elseif($i==0){
             echo $j;
-        }elseif($j<$i){
-            echo " ";
-        }else{
+        }elseif($j>=$i){
             echo ($j*$i);
         }
             echo "</td>";
