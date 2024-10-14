@@ -201,6 +201,74 @@ for($i=0;$i<$width;$i++){
 }
 ?>
 
+<?php
+echo "<br>延伸-挖空的菱形-先設變數,自動轉為奇數<br>";
+$size=10;
+if($size>=3){
+    if($size%2==0){
+        $size++;
+    }
+}else{
+    echo "數字太小,無法畫出菱形";
+}
+for($i=0;$i<$size;$i++){
+    if($i>(floor($size/2))){
+        $k1=$i-(floor($size/2));
+        $j1=2*($i-(2*($i-(floor($size/2)))))+1;
+    }else{
+        $k1=(floor($size/2))-$i;
+        $j1=(2*$i+1);
+    }
+
+    for($k=0;$k<$k1;$k++){
+        echo "&nbsp;";
+    }
+
+    for($j=0;$j<$j1;$j++){
+        if($j==0 || $j==$j1-1){
+            echo "*";
+        }else{
+            echo "&nbsp;";
+        }
+    }
+    echo "<br>";
+}
+?>
+
+<?php
+echo "<br>延伸-有對角線的菱形-先設變數,自動轉為奇數<br>";
+$size=11;
+if($size>=3){
+    if($size%2==0){
+        $size++;
+    }
+}else{
+    echo "數字太小,無法畫出菱形";
+}
+for($i=0;$i<$size;$i++){
+    if($i>(floor($size/2))){
+        $k1=$i-(floor($size/2));
+        $j1=2*($i-(2*($i-(floor($size/2)))))+1;
+    }else{
+        $k1=(floor($size/2))-$i;
+        $j1=(2*$i+1);
+    }
+
+    for($k=0;$k<$k1;$k++){
+        echo "&nbsp;";
+    }
+
+    for($j=0;$j<$j1;$j++){
+        if($j==0 || $j==$j1-1 || $i==(floor($size/2)) || floor($j==($j1-1)/2)){
+            echo "*";
+        }else{
+            echo "&nbsp;";
+        }
+    }
+    echo "<br>";
+}
+?>
+
 </body>
 </html>
 
