@@ -139,11 +139,35 @@ for($i=0;$i<9;$i++){
 }
 ?>
 
+<?php
+echo "<br>實心矩形<br>";
+for ($i=0 ; $i < 5 ; $i++) { 
+    for ($j=0; $j < 5; $j++) { 
+        echo "*";
+    }echo "<br>";
+}
+?>
 
-echo "<br>矩形<br>";
+<?php
+echo "<br>矩形外框<br>";
+for($i=0;$i<5;$i++){
+    for($j=0;$j<5;$j++){ 
+        if($i==0 || $i==4){
+            echo "*";
+    }elseif($j==0 || $j==4){
+        echo "*";
+    }else{
+        echo "&nbsp;";
+        }
+    }
+    echo "<br>";
+}
+?>
 
+<?php
 echo "<br>內含對角線的矩形<br>";
 
+?>
 
 ?>
 
