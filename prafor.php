@@ -123,5 +123,50 @@ for($j=0;$j<=9;$j++){
 echo "</table>";
 
 ?>
+
+<h1>以交叉計算結果呈現的九九乘法表-縮減一半</h1>
+<style>
+.nine{
+    border-collapse:collapse;
+    margin:20px;
+}
+.nine td{
+    border:1px solid #af3;
+    width:30px;
+    height:30px;
+    text-align: center;
+}
+.nine tr:nth-child(1),
+.nine td:nth-child(1){
+    background:blue;
+    color:white;
+}
+
+</style>
+<?php
+
+echo "<table class='nine'>";
+for($j=0;$j<=9;$j++){
+    echo "<tr>";
+    for($i=0 ; $i<=9 ; $i++){
+        echo "<td>";
+        if($j==0 && $i==0){
+            echo "";
+        }elseif($j==0){
+            echo $i;
+        }elseif($i==0){
+            echo $j;
+        }elseif($j<$i){
+            echo " ";
+        }else{
+            echo ($j*$i);
+        }
+            echo "</td>";
+    }
+    echo"</tr>";
+}
+echo "</table>";
+
+?>
 </body>
 </html>
