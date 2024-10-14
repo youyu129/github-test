@@ -184,14 +184,14 @@ for($i=0;$i<5;$i++){
 
 <?php
 echo "<br>內含對角線的矩形-先設變數<br>";
-$n=12;
-for($i=0;$i<$n;$i++){
-    for($j=0;$j<$n;$j++){ 
-        if($i==0 || $i==($n-1)){
+$width=12;
+for($i=0;$i<$width;$i++){
+    for($j=0;$j<$width;$j++){ 
+        if($i==0 || $i==($width-1)){
             echo "*";
-    }elseif($j==0 || $j==($n-1)){
+    }elseif($j==0 || $j==($width-1)){
         echo "*";
-    }elseif($i==$j || $j==($n-1)-$i){
+    }elseif($i==$j || $j==($width-1)-$i){
         echo "*";
     }else{
         echo "&nbsp;";
