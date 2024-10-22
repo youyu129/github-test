@@ -34,7 +34,8 @@ foreach($array2 as $key => $value){
 ?>
 
 
-方法一：1個header迴圈+每位學生1個迴圈<br><br>
+<h2>方法一：1個header迴圈+每位學生1個迴圈</h2>
+<br><br>
 
 <?php
 $header=['', '國文', '英文', '數學', '地理', '歷史'];
@@ -89,7 +90,8 @@ $hebe=['hebe',71,62,80,62,64];
     </tr>
 </table>
 <br><br>
-方法二：1個header迴圈+1個學生迴圈<br><br>
+<h2>方法二：1個header迴圈+1個學生迴圈</h2>
+<br><br>
 <?php
 $header=['', '國文', '英文', '數學', '地理', '歷史'];
 $students=[['judy',95,64,70,90,84],
@@ -121,7 +123,8 @@ $students=[['judy',95,64,70,90,84],
     ?>
 </table>
 <br><br>
-方法三：1個header迴圈+1個學生迴圈<br><br>
+<h2>方法三：1個header迴圈+1個學生迴圈</h2>
+<br><br>
 <?php
 $header=['', '國文', '英文', '數學', '地理', '歷史'];
 $stus=['judy'=>[95,64,70,90,84],
@@ -223,7 +226,8 @@ print_r($tt);
 echo "</pre>";
 ?>
 <br><br>
-方法四：設定變數，方便修改<br><br>
+<h2>方法四：設定變數，方便修改</h2>
+<br><br>
 <table>
     <tr>
         <?php
@@ -244,7 +248,7 @@ echo "</pre>";
         echo "</tr>";
     }
     ?>
+    <hr>
 
-
-           </body>
+</body>
 </html>
