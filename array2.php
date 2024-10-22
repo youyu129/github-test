@@ -123,35 +123,29 @@ for($i=0;$i<6;$i++){
 $year=2024;
 echo "西元" . $year . "年是" . $sl[($year-4)%60] . "年";
 
-
-
-
-// $year=2058;
-// $baseYear = 1024;
-
-// $gan = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];
-
-// $zhi = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];
-
-// $ganIndex = ($year-$baseYear) % 10;
-// $zhiIndex = ($year-$baseYear) % 12;
-// echo "西元 " . $year . " 年的天干地支是：" . $gan[$ganIndex] . $zhi[$zhiIndex];
-
-// foreach ($gan as $key => $value) {
-//     foreach ($zhi as $key => $value) {
-//         echo
-        
-//     }
-//     # code...
-// }
 ?>
 
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
+<h2>請設計一支程式，在不產生新陣列的狀況下，將一個陣列的元素順序反轉(利用迴圈)</h2>
+<li>例：$a=[2,4,6,1,8] 反轉後 $a=[8,1,6,4,2]</li>
+<?php
+$a=[2,4,6,1,8];
+for ($i=0; $i < floor(count($a)/2) ; $i++) { 
+    $tmp=$a[$i];
+    $a[$i]=$a[count($a)-1-$i];
+    $a[count($a)-1-$i]=$tmp;
+}
+
+// echo "<pre>";
+print_r($a);
+// echo "</pre>";
+
+?>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 </body>
 </html>
