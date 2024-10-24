@@ -129,7 +129,7 @@ for ($i=0 ; $i < 5 ; $i++) {
         text-align:center;
         border:1px solid #999;
     }
-</style>
+    </style>
 <table>
     <tr>
         <td></td>
@@ -141,6 +141,7 @@ for ($i=0 ; $i < 5 ; $i++) {
         <td>五</td>
         <td>六</td>
     </tr>
+    <h3>方法一：for迴圈</h3>
 <?php
 // $d=strtotime("2024-2-5");
 // echo date("m月有t天",$d);
@@ -154,6 +155,7 @@ for ($i=0; $i <6 ; $i++) {
     for($j=0; $j <7 ; $j++) {
     echo "<td>";
     $dayNum=$i*7 + $j+1 - $firstDayWeek;
+    // 算出來的日期小於1就不顯示、大於當月天數也不顯示
     if($dayNum<=date("t") && $dayNum>0){
     echo $dayNum;
     }
@@ -161,7 +163,39 @@ for ($i=0; $i <6 ; $i++) {
     }
     echo "</tr>"; 
 }
+?>
+</table>
+<h3>方法二：日曆格式</h3>
+<table>
+    <tr>
+        <td></td>
+        <td>日</td>
+        <td>一</td>
+        <td>二</td>
+        <td>三</td>
+        <td>四</td>
+        <td>五</td>
+        <td>六</td>
+    </tr>
+<?php
+$firstDay=date("Y-m-1");
+$firstDayTime=strtotime($firstDay);
+$firstDayWeek=date("w",strtotime(date("Y-m-1")));
 
+for ($i=0; $i <6 ; $i++) {
+    echo "<tr>"; 
+    echo "<td>";
+    echo $i+1;
+    echo "</td>";
+    for($j=0; $j <7 ; $j++) {
+    echo "<td>";
+    $cell=$i*7+$j - $firstDayWeek;
+    $theDayTime=strtotime("$cell days".$firstDay);
+    echo date("d",$theDayTime);
+    echo "</td>";
+    }
+    echo "</tr>"; 
+}
 ?>
 </table>
 <hr>
