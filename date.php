@@ -144,6 +144,8 @@ for ($i=0 ; $i < 5 ; $i++) {
 <?php
 // $d=strtotime("2024-2-5");
 // echo date("m月有t天",$d);
+$firstDayWeek=date("w",strtotime(date("Y-m-1")));
+// echo $firstDayWeek; 10月的第一天是星期二(w=2)
 for ($i=0; $i <6 ; $i++) {
     echo "<tr>"; 
     echo "<td>";
@@ -151,8 +153,8 @@ for ($i=0; $i <6 ; $i++) {
     echo "</td>";
     for($j=0; $j <7 ; $j++) {
     echo "<td>";
-    $dayNum=$i*7 + $j+1;
-    if($dayNum<=date("t")){
+    $dayNum=$i*7 + $j+1 - $firstDayWeek;
+    if($dayNum<=date("t") && $dayNum>0){
     echo $dayNum;
     }
         echo "</td>";
