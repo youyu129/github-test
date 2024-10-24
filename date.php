@@ -129,6 +129,18 @@ for ($i=0 ; $i < 5 ; $i++) {
         text-align:center;
         border:1px solid #999;
     }
+    .holiday{
+        background:pink;
+        color:#999;
+    }
+    .gray-text{
+        color:#999;
+    }
+    .today{
+        background:blue;
+        color:white;
+        font-weight:bolder;
+    }
     </style>
 <table>
     <tr>
@@ -169,13 +181,13 @@ for ($i=0; $i <6 ; $i++) {
 <table>
     <tr>
         <td></td>
-        <td>日</td>
+        <td class='holiday'>日</td>
         <td>一</td>
         <td>二</td>
         <td>三</td>
         <td>四</td>
         <td>五</td>
-        <td>六</td>
+        <td class='holiday'>六</td>
     </tr>
 <?php
 $firstDay=date("Y-m-1");
@@ -188,12 +200,19 @@ for ($i=0; $i <6 ; $i++) {
     echo $i+1;
     echo "</td>";
     for($j=0; $j <7 ; $j++) {
-    echo "<td>";
-    $cell=$i*7+$j - $firstDayWeek;
-    $theDayTime=strtotime("$cell days".$firstDay);
-    echo date("d",$theDayTime);
-    echo "</td>";
-    }
+        $cell=$i*7+$j - $firstDayWeek;
+        $theDayTime=strtotime("$cell days".$firstDay);
+
+        // 所需css樣式判斷
+        $w=date("w",$theDayTime);
+        $theMonth(date("m",$theDayTime)==date("m"))?'':'gray-text';
+        $isToday=(date("Y-m-d",$theDayTime)==date("Y-m-d"))?'today':'';
+        $isHoliday=($w==0||$w==6)?'holiday':'';
+               
+            echo "<td class='holiday $theMonth $isToday $isHoliday'>";
+            echo date("d",$theDayTime);
+            echo "</td>";
+        }
     echo "</tr>"; 
 }
 ?>
