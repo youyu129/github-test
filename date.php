@@ -55,15 +55,42 @@ echo "<br>" ;
 ?>
 <hr>
 
+<h2>將英文星期轉為中文</h2>
+<?php
+$weekString=[
+'Monday'=>['min'=>"一",'short'=>"周一",'fulltext'=>"星期一"],
+'Wednesday'=>['min'=>"二",'short'=>"周二",'fulltext'=>"星期二"],
+'Tuesday'=>['min'=>"三",'short'=>"周三",'fulltext'=>"星期三"],
+'Thursday'=>['min'=>"四",'short'=>"周四",'fulltext'=>"星期四"],
+'Friday'=>['min'=>"五",'short'=>"周五",'fulltext'=>"星期五"],
+'Saturday'=>['min'=>"六",'short'=>"周六",'fulltext'=>"星期六"],
+'Sunday'=>['min'=>"日",'short'=>"周日",'fulltext'=>"星期日"]
+];
+
+echo date("m月d日")." ".$weekString[date("l")]['fulltext'] . "<br>";
+?>
+<hr>
     <h2>利用date()函式的格式化參數，完成以下的日期格式呈現</h2>
 <ul>
     <li>2021/10/05</li>
     <li>10月5日 Tuesday</li>
     <li>2021-10-5 12:9:5</li>
     <li>2021-10-5 12:09:05</li>
-    <li>今天是西元2021年10月5日 上班日(或假日)計算距離自己下一次生日還有幾天</li>
+    <li>今天是西元2021年10月5日 上班日(或假日)</li>
 </ul>
 <?php
+echo date("Y/m/d") . "<br>";
+echo date("m月/d日 l"). "<br>";
+echo date("Y-m-d G:i:s") . "<br>";
+echo date("Y-m-d H:i:s") . "<br>";
+
+echo "今天是西元". date("Y年m月d日") ." ";
+if (date("N")>5) {
+    echo "假日";
+}else{
+    echo "上班日";
+}
+    
 ?>
 <hr>
 
@@ -77,6 +104,13 @@ echo "<br>" ;
     <li>2021-11-01 星期一</li>
 </ul>
 <?php
+for ($i=0 ; $i < 5 ; $i++) {
+    $timestamp=strtotime("+$i weeks".date("Y-m-d")); 
+    echo date("Y-m-d",$timestamp);
+    echo "&nbsp";
+    echo $weekString[date("l")]["fulltext"];
+    echo "<br>";    
+}
 ?>
 <hr>
 
